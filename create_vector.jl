@@ -1,3 +1,7 @@
+module CreateVector
+
+export create_random_vector
+
 using Random
 
 function create_random_vector(n::Int; max::Int=100, order::Symbol=:random, invert::Bool=false)
@@ -13,3 +17,5 @@ function create_random_vector(n::Int; max::Int=100, order::Symbol=:random, inver
 
     return vec
 end
+
+end #module
