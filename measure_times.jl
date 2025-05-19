@@ -1,3 +1,7 @@
+module MeasureTimes
+
+export measure_and_save_time
+
 using DelimitedFiles
 
 function measure_and_save_time(file::String, arr::Vector{T}, f::Function) where T<:Real
@@ -18,3 +22,5 @@ function measure_and_save_time(file::String, arr::Vector{T}, f::Function) where 
     
     writedlm(file, all_averages)
 end
+
+end #module
