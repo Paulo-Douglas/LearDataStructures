@@ -28,6 +28,8 @@ if [ $# -ne 6 ]; then
 fi
 
 ext="${5##*.}"
+result="$6.txt"
+echo -n >"$result"
 
 if [ $ext = "c" ]; then
   gcc $5 -o prog_executavel
@@ -43,21 +45,19 @@ for n in $(seq $2 $3 $4); do
 
   for i in $(seq $1); do
     case $ext in
-    c)
-      ./prog_executavel $n >>$file
-      ;;
-    py)
-      python3 $5 >>$file
-      ;;
-    jl)
-      julia $5 >>$file
-      ;;
+    c) ./prog_executavel $n >>$file ;;
+    py) python3 $5 $n >>$file ;;
+    jl) julia $5 $n >>$file ;;
     *)
       echo -e "${RED}Extensão $ext não suportada."
       exit 1
       ;;
     esac
   done
+
+  mean=$(awk '{ s += $1 } END { if (NR > 0) print s / NR}' $file)
+  echo "$n $mean" >>$result
+
 done
 
 if [ $ext = "c" ]; then
