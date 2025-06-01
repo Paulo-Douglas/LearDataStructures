@@ -1,5 +1,6 @@
-include("../measure_times.jl")
-using .MeasureTimes
+module InsertionSort
+
+export insertion_sort!
 
 function insertion_sort!(arr)
     n = length(arr)
@@ -15,4 +16,4 @@ function insertion_sort!(arr)
     return arr
 end
 
-measure_and_save_time(joinpath(@__DIR__, "data", "times", "times_insertion-100-100-1000-10000-W.txt"); f=insertion_sort!, invert=true)
+end # module
