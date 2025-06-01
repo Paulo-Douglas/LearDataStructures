@@ -1,5 +1,6 @@
-include("../measure_times.jl")
-using .MeasureTimes
+module QuickSort
+
+export quick_sort!, quick_sort_wrapper!
 
 function quick_sort!(v::Vector{T}, s::Int64, e::Int64) where T<:Real
     if s < e
@@ -25,4 +26,4 @@ function quick_sort_wrapper!(v::Vector{T}) where T<:Real
     quick_sort!(v, 1, length(v))
 end
 
-measure_and_save_time(joinpath(@__DIR__, "data", "times", "times_quick_100-100-1000.txt"), f=quick_sort_wrapper!)
+end # module
