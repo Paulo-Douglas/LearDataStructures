@@ -12,7 +12,7 @@ function measure_and_save_time(file::String; order::Symbol = :random, f::Functio
     for size in 100:100:1000
         times = Float64[]
         base_array = create_random_vector(size, order=order, invert=invert)
-        for _ in 1:1000000
+        for _ in 1:2000000
             array = copy(base_array)
             start_time = time()
             f(array)
