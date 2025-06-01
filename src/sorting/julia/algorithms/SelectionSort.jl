@@ -1,5 +1,6 @@
-include("../measure_times.jl")
-using .MeasureTimes
+module SelectionSort
+
+export selection_sort!
 
 function selection_sort!(arr::Vector{T}) where T<:Real
     n = length(arr)
@@ -14,4 +15,4 @@ function selection_sort!(arr::Vector{T}) where T<:Real
     end
 end
 
-measure_and_save_time(joinpath(@__DIR__, "data", "times_selection-100-100-1000.txt"); f=selection_sort!)
+end # module
