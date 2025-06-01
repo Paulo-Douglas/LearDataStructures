@@ -1,6 +1,6 @@
 using DelimitedFiles
 include("create_vector.jl")
-include("SelectionSort.jl")
+include("algorithms/SelectionSort.jl")
 using .CreateVector
 using .SelectionSort
 
