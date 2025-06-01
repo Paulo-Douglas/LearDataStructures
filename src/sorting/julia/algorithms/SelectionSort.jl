@@ -1,4 +1,4 @@
-include("measure_times.jl")
+include("../measure_times.jl")
 using .MeasureTimes
 
 function selection_sort!(arr::Vector{T}) where T<:Real

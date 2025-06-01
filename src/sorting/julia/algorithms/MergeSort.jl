@@ -1,4 +1,4 @@
-include("measure_times.jl")
+include("../measure_times.jl")
 using .MeasureTimes
 
 function merge_sort!(v::Vector{T}, s::Int, e::Int) where T

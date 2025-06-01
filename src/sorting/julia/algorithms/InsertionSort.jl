@@ -1,4 +1,4 @@
-include("measure_times.jl")
+include("../measure_times.jl")
 using .MeasureTimes
 
 function insertion_sort!(arr)

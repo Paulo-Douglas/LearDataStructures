@@ -1,4 +1,4 @@
-include("measure_times.jl")
+include("../measure_times.jl")
 using .MeasureTimes
 
 function quick_sort!(v::Vector{T}, s::Int64, e::Int64) where T<:Real
