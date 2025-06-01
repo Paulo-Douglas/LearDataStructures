@@ -1,5 +1,6 @@
-include("../measure_times.jl")
-using .MeasureTimes
+module MergeSort
+    
+export merge_sort!, merge_sort_wrapper!
 
 function merge_sort!(v::Vector{T}, s::Int, e::Int) where T
     if s < e
@@ -34,4 +35,4 @@ function merge_sort_wrapper!(v::Vector{T}) where T<:Real
     merge_sort!(v, 1, length(v))
 end
 
-measure_and_save_time(joinpath(@__DIR__, "data", "times", "times_merge_100-100-1000.txt"), f=merge_sort_wrapper!)
+end # module
