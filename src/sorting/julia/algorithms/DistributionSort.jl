@@ -1,5 +1,6 @@
-include("../measure_times.jl")
-using .MeasureTimes
+module DistributionSort
+
+export distribution_sort!
 
 function distribution_sort!(v::Vector{Int})
     n = length(v)
@@ -30,4 +31,4 @@ function distribution_sort!(v::Vector{Int})
     end
 end
 
-measure_and_save_time(joinpath(@__DIR__, "data", "times", "times_distribution-100-100-1000.txt"), f=distribution_sort!)
+end # module
