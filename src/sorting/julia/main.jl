@@ -7,11 +7,13 @@ include("algorithms/InsertionSort.jl")
 include("algorithms/MergeSort.jl")
 include("algorithms/QuickSort.jl")
 include("algorithms/SelectionSort.jl")
+include("algorithms/BubbleSort.jl")
 using .DistributionSort
 using .InsertionSort
 using .MergeSort
 using .QuickSort
 using .SelectionSort
+using .BubbleSort
 
 const GREEN = "\e[32m"
 const CYAN  = "\e[36m"
@@ -23,7 +25,8 @@ const algorithms = Dict(
     "InsertionSort" => insertion_sort!,
     "MergeSort" => merge_sort_wrapper!,
     "QuickSort" => quick_sort_wrapper!,
-    "SelectionSort" => selection_sort!
+    "SelectionSort" => selection_sort!,
+    "BubbleSort" => bubble_sort!
 )
 
 function help_message()
